@@ -1,0 +1,1623 @@
+/* ==========================================================================
+   1. БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================================================================== */
+:root {
+    --brand-color: #fda800; /* Твой фирменный оранжевый */
+    --bg-creamy: #fdfaf6;    /* Мягкий кремовый фон */
+    --text-dark: #4a3f35;    /* Основной цвет текста */
+    --text-title: #3e2e24;   /* Цвет заголовков */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg-creamy);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (НАВИГАЦИЯ)
+   ========================================================================== */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px; background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 800; color: var(--brand-color); }
+#main-logo { height: 45px; }
+
+.nav-links { display: flex; gap: 25px; list-style: none; font-weight: 600; }
+.nav-links a { text-decoration: none; color: #6b5a4e; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--brand-color); }
+
+.btn-eye {
+    background: #f2ebe1; border: none; padding: 10px 15px; border-radius: 20px;
+    font-family: inherit; font-weight: 600; color: var(--text-dark); cursor: pointer; transition: 0.3s;
+}
+.btn-eye:hover { background: #e3d8c8; }
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================================================== */
+.hero {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 60px 40px; background: linear-gradient(135deg, #fff7ed 0%, #ffecd2 100%);
+    border-radius: 0 0 50px 50px; margin-bottom: 40px;
+}
+.hero-content h1 { font-size: 3rem; color: var(--text-title); line-height: 1.2; margin-bottom: 20px; }
+.hero-content h1 span { color: var(--brand-color); }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 500px; }
+
+.btn-primary {
+    background: var(--brand-color); color: white; padding: 15px 35px;
+    border-radius: 30px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 8px 20px rgba(253, 168, 0, 0.3); transition: 0.3s; display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(253, 168, 0, 0.4); }
+
+.hero-image-placeholder { font-size: 10rem; color: #ffd699; }
+
+/* ==========================================================================
+   4. БЛОК "О НАШЕМ ЦЕНТРЕ" (ABOUT SUMMARY)
+   ========================================================================== */
+.about-summary { padding: 60px 0; text-align: center; background: #ffffff; border-radius: 40px; margin: 20px 0; }
+.about-summary h2 { font-size: 2.3rem; color: var(--text-title); margin-bottom: 20px; }
+.about-summary p { max-width: 800px; margin: 0 auto 25px auto; font-size: 1.1rem; color: #6b5a4e; }
+
+.btn-secondary {
+    display: inline-block; padding: 12px 30px; 
+    border: 2px solid var(--brand-color); color: var(--brand-color); 
+    border-radius: 30px; text-decoration: none; font-weight: 700; transition: 0.3s;
+}
+.btn-secondary:hover { background: var(--brand-color); color: white; }
+
+/* ==========================================================================
+   5. СЕКЦИЯ СЛАЙДЕРА УСЛУГ (SWIPER)
+   ========================================================================== */
+.programs-slider-section { padding: 60px 0; text-align: center; }
+.programs-slider-section h2 { font-size: 2.5rem; margin-bottom: 5px; color: var(--text-title); }
+.section-subtitle { color: #8a7868; margin-bottom: 40px; font-size: 1.1rem; }
+.program-item .price-tag {
+    text-decoration: none; /* Убирает подчёркивание текста */
+    display: inline-block;
+}
+
+.swiper { width: 92%; margin: 0 auto; padding: 20px 0; }
+
+.swiper-slide.program-item {
+    background: #ffffff; border-radius: 30px; padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f0e6db;
+    transition: 0.3s; height: auto; display: flex; flex-direction: column; align-items: center;
+}
+.swiper-slide.program-item:hover { border-color: var(--brand-color); transform: translateY(-5px); }
+
+/* Круглые и аккуратные картинки */
+.service-img {
+    width: 130px; height: 130px; object-fit: cover;
+    border-radius: 20%; margin-bottom: 20px;
+    border: 3px solid var(--bg-creamy); box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.program-item h4 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-title); }
+
+.price-tag {
+    display: inline-block; background: #fff8e8; color: var(--brand-color);
+    padding: 8px 25px; border-radius: 20px; font-weight: 800; margin-top: auto;
+}
+
+/* Кнопки навигации слайдера */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--brand-color) !important; background: rgba(255, 255, 255, 0.9);
+    width: 45px !important; height: 45px !important; border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.swiper-button-next::after, .swiper-button-prev::after { font-size: 18px !important; font-weight: bold; }
+
+
+/* ==========================================================================
+   6. БЛОК ФИЛИАЛЫ И КАРТА
+   ========================================================================== */
+.branches { padding: 80px 0; background: #ffffff; border-radius: 50px 50px 0 0; }
+.branches h2 { font-size: 2.5rem; text-align: center; color: var(--text-title); margin-bottom: 40px; }
+
+.branches-wrapper { display: flex; gap: 40px; align-items: stretch; }
+.branches-list { flex: 1; display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+
+.branch-card {
+    background: var(--bg-creamy); padding: 25px; border-radius: 20px;
+    border: 1px solid #f0e6db; transition: 0.3s;
+}
+.branch-card h3 { color: var(--text-title); font-size: 1.3rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.branch-card h3 i { color: var(--brand-color); }
+.branch-card p { color: #6b5a4e; font-size: 1rem; }
+.branch-phone { margin-top: 8px; font-weight: 600; }
+
+/* Контейнер для карты */
+.map-container { flex: 1; min-height: 300px; border-radius: 25px; overflow: hidden; background: #f2ebe1; box-shadow: 0 10px 25px rgba(0,0,0,0.04); }
+.map-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #a6988c; gap: 15px; padding: 40px 0; }
+.map-placeholder i { font-size: 3.5rem; color: #ffd699; }
+
+/* ==========================================================================
+   7. КОНТАКТЫ И ПОДВАЛ (FOOTER)
+   ========================================================================== */
+.contact { background: #3e2e24; color: #fdfaf6; padding: 60px 0; border-radius: 0; margin-top: 0; }
+.contact h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.contact p { font-size: 1.1rem; margin-bottom: 15px; }
+.contact i { color: var(--brand-color); margin-right: 10px; }
+
+footer { background: #2a1e16; color: #a6988c; padding: 40px 0; text-align: center; border-top: 1px solid #3a2b20; }
+.footer-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+.footer-links a { color: #d6c8bc; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.footer-links a:hover { color: var(--brand-color); }
+
+/* ==========================================================================
+   8. АДАПТИВНОСТЬ (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .branches-wrapper { flex-direction: column; }
+    .map-container { min-height: 250px; }
+}
+
+@media (max-width: 768px) {
+    header { padding: 15px 20px; }
+    .nav-links { display: none; } /* Скрываем десктопное меню */
+    .hero { flex-direction: column; text-align: center; padding: 40px 20px; border-radius: 0 0 30px 30px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { max-width: 100%; }
+    .hero-image-placeholder { display: none; }
+    .swiper { width: 100%; }
+}
+/* ==========================================================================
+   9. ВЫПАДАЮЩЕЕ МЕНЮ (DROPDOWN) И СТИЛИ СТРАНИЦЫ "О НАС"
+   ========================================================================== */
+
+/* Навигация dropdown */
+.nav-links li { position: relative; }
+.dropdown-menu {
+    position: absolute; top: 100%; left: 0; background: #ffffff;
+    list-style: none; padding: 10px 0; border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    opacity: 0; visibility: hidden; transform: translateY(10px);
+    transition: 0.3s ease; min-width: 220px; z-index: 200;
+}
+.dropdown-menu li a {
+    padding: 10px 20px; display: block; font-size: 0.95rem; color: #6b5a4e;
+}
+.dropdown-menu li a:hover { background: var(--bg-creamy); color: var(--brand-color); }
+.nav-links li:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* Блок преимуществ */
+.about-hero { padding: 60px 0; text-align: center; }
+.about-hero h1 { font-size: 2.5rem; color: var(--text-title); margin-bottom: 10px; }
+.about-hero h1 span { color: var(--brand-color); }
+.about-hero .subtitle { font-size: 1.3rem; font-weight: 700; color: #6b5a4e; margin-bottom: 40px; }
+
+.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 40px; }
+.adv-card { background: #ffffff; padding: 30px 20px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #f0e6db; text-align: center; }
+.adv-card i { font-size: 2.5rem; color: var(--brand-color); margin-bottom: 15px; }
+.adv-card h3 { color: var(--text-title); margin-bottom: 12px; font-size: 1.25rem; }
+.adv-card p { font-size: 0.95rem; color: #6b5a4e; }
+
+.stat-box { background: linear-gradient(135deg, #fff7ed 0%, #ffecd2 100%); padding: 20px; border-radius: 20px; display: inline-flex; align-items: center; gap: 15px; max-width: 800px; text-align: left; }
+.stat-box i { font-size: 2rem; color: var(--brand-color); }
+
+/* Блок команды */
+.team-section { padding: 60px 0; background: #ffffff; border-radius: 40px; }
+.team-section h2 { text-align: center; font-size: 2.5rem; color: var(--text-title); margin-bottom: 40px; }
+.team-block { margin-bottom: 50px; }
+.block-title { font-size: 1.8rem; color: #6b5a4e; margin-bottom: 25px; text-align: center; position: relative; }
+
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.center-staff { max-width: 350px; margin: 0 auto; }
+
+.member-card { background: var(--bg-creamy); border-radius: 24px; padding: 30px 20px; text-align: center; border: 1px solid #f0e6db; }
+.member-img, .member-img-placeholder { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px auto; }
+.member-img-placeholder { background: #f2ebe1; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #ffd699; }
+.member-card h4 { font-size: 1.3rem; color: var(--text-title); margin-bottom: 5px; }
+.member-card .role { color: var(--brand-color); font-weight: 700; font-size: 0.95rem; margin-bottom: 15px; }
+.member-card .desc { font-size: 0.9rem; color: #6b5a4e; }
+
+/* Официальный блок для проверок */
+.official-section { padding: 80px 0; background: var(--bg-creamy); }
+.official-section h2 { text-align: center; font-size: 2rem; color: var(--text-title); }
+.table-notice { text-align: center; color: #8a7868; font-size: 0.9rem; margin-bottom: 40px; }
+.official-block { background: #ffffff; padding: 30px; border-radius: 20px; border: 1px solid #f0e6db; margin-bottom: 30px; }
+.official-block h3 { font-size: 1.2rem; color: var(--text-title); margin-bottom: 15px; border-bottom: 2px solid var(--bg-creamy); padding-bottom: 8px; }
+.official-block p { color: #6b5a4e; font-size: 1rem; margin-bottom: 10px; }
+
+/* Стили таблиц */
+.table-responsive { overflow-x: auto; }
+.official-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.95rem; min-width: 600px; }
+.official-table th, .official-table td { border: 1px solid #d6c8bc; padding: 12px 15px; text-align: left; }
+.official-table th { background: #f2ebe1; color: var(--text-title); font-weight: 700; }
+.official-table tr:nth-child(even) { background: #fffdfa; }
+
+/* Доп. адаптив для меню */
+@media (max-width: 768px) {
+    .dropdown-menu { position: static; opacity: 1; visibility: visible; box-shadow: none; padding-left: 20px; transform: none; display: none; }
+    .nav-links li:hover .dropdown-menu { display: block; }
+    .stat-box { flex-direction: column; text-align: center; }
+}
+/* ==========================================================================
+   10. СТИЛИ ДЛЯ ОФИЦИАЛЬНОЙ СТРАНИЦЫ (SVEDEN.HTML)
+   ========================================================================== */
+
+.sveden-page { padding: 40px 0; }
+.sveden-main-title { font-size: 2.3rem; color: #3e2e24; text-align: center; margin-bottom: 5px; font-weight: 800; }
+.sveden-subtitle { text-align: center; color: #8a7868; font-size: 1.05rem; margin-bottom: 40px; }
+
+.sveden-section { margin-bottom: 35px; scroll-margin-top: 100px; /* Фикс, чтобы при переходе по якорю шапка не перекрывала заголовок */ }
+.sveden-section h2 { font-size: 1.5rem; color: #3e2e24; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.sveden-section h2 i { color: #fda800; }
+
+.sveden-card { background: #ffffff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); border: 1px solid #f0e6db; }
+.sveden-card p { font-size: 1rem; color: #5a4c42; margin-bottom: 12px; }
+.sveden-card p:last-child { margin-bottom: 0; }
+.sveden-card strong { color: #3e2e24; }
+
+/* Кнопки скачивания файлов */
+.doc-intro { margin-bottom: 20px !important; font-weight: 600; }
+.docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+.doc-link-item { 
+    display: flex; align-items: center; gap: 15px; padding: 15px 20px; 
+    background: #fffbf7; border: 1px solid #ebdcd0; border-radius: 12px; 
+    text-decoration: none; color: #5a4c42; font-weight: 700; transition: 0.3s; 
+}
+.doc-link-item i { font-size: 1.8rem; color: #e74c3c; /* Красный цвет для PDF иконки */ }
+.doc-link-item:hover { background: #fff3e0; border-color: #fda800; color: #fda800; transform: translateY(-2px); }
+
+/* Официальные таблицы */
+.table-responsive { overflow-x: auto; width: 100%; }
+.official-table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 0.95rem; min-width: 650px; }
+.official-table th, .official-table td { border: 1px solid #dcd1c4; padding: 12px 15px; text-align: left; vertical-align: top; }
+.official-table th { background: #f7f1ea; color: #3e2e24; font-weight: 800; }
+.official-table tr:nth-child(even) { background: #faf8f5; }
+/* ==========================================================================
+   17. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ SVEDEN.HTML
+   ========================================================================== */
+
+/* Стили для списков в карточках */
+.sveden-card ul {
+    margin: 10px 0 10px 25px;
+    color: #5a4c42;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.sveden-card ul li {
+    margin-bottom: 5px;
+}
+
+/* Образовательная программа */
+.edu-program {
+    background: var(--bg-creamy);
+    padding: 20px 25px;
+    border-radius: 16px;
+    border: 1px solid #f0e6db;
+    margin: 15px 0;
+}
+
+.edu-program h4 {
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 12px;
+}
+
+.edu-program ul {
+    margin: 10px 0 10px 20px;
+}
+
+.edu-program .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brand-color);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.edu-program .btn-download:hover {
+    background: #e09500;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .edu-program {
+        padding: 15px;
+    }
+
+    .edu-program h4 {
+        font-size: 1rem;
+    }
+
+    .sveden-card ul {
+        margin-left: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-program .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   11. СТРАНИЦА "УСЛУГИ" (SERVICES.HTML)
+   ========================================================================== */
+
+.services-hero { padding: 60px 0 30px; text-align: center; }
+.services-hero h1 { font-size: 2.8rem; color: var(--text-title); margin-bottom: 10px; }
+.services-hero h1 span { color: var(--brand-color); }
+.services-hero .subtitle { font-size: 1.2rem; color: #6b5a4e; max-width: 600px; margin: 0 auto; }
+
+.services-content { padding: 30px 0 80px; }
+.services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; 
+}
+
+.service-card-detailed {
+    background: #ffffff;
+    border-radius: 25px;
+    border: 1px solid #f0e6db;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.service-card-detailed:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-color);
+    box-shadow: 0 15px 40px rgba(253, 168, 0, 0.1);
+}
+
+.sc-img-wrapper {
+    background: #fff8e8; /* Мягкая подложка под иконку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0e6db;
+}
+
+.sc-img-wrapper img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 20%;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.sc-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sc-info h3 {
+    font-size: 1.4rem;
+    color: var(--text-title);
+    margin-bottom: 15px;
+}
+
+.sc-info p {
+    font-size: 0.95rem;
+    color: #5a4c42;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Чтобы нижняя панель всегда была прижата к низу */
+}
+
+.sc-note {
+    font-size: 0.85rem !important;
+    font-style: italic;
+    color: #a6988c !important;
+    margin-bottom: 20px !important;
+}
+
+.sc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #f0e6db;
+    margin-top: auto;
+}
+
+.sc-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    background: #fff8e8;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.sc-duration {
+    font-size: 0.95rem;
+    color: #8a7868;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* ==========================================================================
+   12. ОБНОВЛЕННЫЙ ГЛАВНЫЙ ЭКРАН И ИНСТА-ГАЛЕРЕЯ (BENTO)
+   ========================================================================== */
+
+/* ==========================================================================
+   12.1 ДВЕ ФОТОГРАФИИ В HERO (КРУПНЫЕ, С БЕЛОЙ ОБВОДКОЙ)
+   ========================================================================== */
+.hero-live-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 30px; /* Увеличили зазор для более широкой композиции */
+    position: relative;
+    padding-right: 20px;
+}
+
+/* Общий стиль для обеих карточек с белой обводкой */
+.hero-live-image img {
+    border-radius: 40px; 
+    box-shadow: 0 20px 50px rgba(62, 46, 36, 0.15); /* Более глубокая тень */
+    border: 7px solid #ffffff; /* Толстая белая рамка */
+    object-fit: cover;
+    transition: transform 0.4s ease, z-index 0s;
+    position: relative;
+}
+
+/* Левая фотография (hero-2) — делаем крупнее */
+.hero-img-left {
+    width: 310px; /* Увеличена ширина */
+    height: 248px; 
+    transform: rotate(-5deg); /* Наклон влево */
+}
+
+/* Правая фотография (hero) — делаем крупнее */
+.hero-img-right {
+    width: 410px; /* Увеличена ширина */
+    height: 264px; 
+    transform: rotate(4deg); /* Наклон вправо */
+}
+
+/* Эффект при наведении: плавное выпрямление */
+.hero-img-left:hover,
+.hero-img-right:hover {
+    transform: rotate(0deg) scale(1.04);
+    z-index: 10;
+}
+/* 12.2 Новая кнопка просмотра видео */
+.btn-video-watch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #3e2e24;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-left: 20px;
+    transition: 0.2s;
+}
+.btn-video-watch i {
+    font-size: 2.2rem;
+    color: var(--brand-color);
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(253, 168, 0, 0.2);
+    transition: 0.3s ease;
+}
+.btn-video-watch:hover i {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(253, 168, 0, 0.4);
+}
+
+/* 12.3 Сетка галереи Bento (ОБНОВЛЕННАЯ С ВЫСОКИМ ЦЕНТРОМ) */
+.live-gallery-section { padding: 20px 0 60px; background: transparent; }
+
+.bento-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Задаем четкую высоту строк: средняя строка (3-я) теперь 360px вместо 240px! */
+    grid-template-rows: 240px 240px 360px 240px 240px; 
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+    border: 1px solid #f0e6db;
+    cursor: pointer;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Размеры ячеек */
+.size-big { grid-column: span 2; grid-row: span 2; }       
+.size-horizontal { grid-column: span 2; grid-row: span 1; } 
+.size-vertical { grid-column: span 1; grid-row: span 2; }   
+
+/* Эффект наведения (Overlay) */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(62, 46, 36, 0.9) 0%, rgba(62, 46, 36, 0.4) 50%, rgba(62, 46, 36, 0.1) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-text { color: #ffffff; transform: translateY(15px); transition: transform 0.3s ease; }
+.gallery-text h3 { font-size: 1.3rem; margin-bottom: 5px; font-weight: 800; color: #ffd699; }
+.gallery-text p { font-size: 0.95rem; line-height: 1.4; opacity: 0.95; }
+
+/* Анимация при наведении */
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover .gallery-text { transform: translateY(0); }
+
+/* ==========================================================================
+   13. БЛОК С ВИДЕОПЛЕЕРОМ
+   ========================================================================== */
+.promo-video-section {
+    padding: 40px 0 80px;
+    background: #fffdfa;
+}
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(62, 46, 36, 0.1);
+    border: 6px solid #ffffff;
+    background: #000;
+}
+.video-container video {
+    width: 100%;
+    display: block; /* Убирает лишний отступ снизу плеера */
+    border-radius: 18px;
+}
+
+/* Адаптивность для телефонов и планшетов */
+@media (max-width: 1024px) {
+    .bento-gallery { 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: none; /* Сбрасываем жесткую высоту на планшетах */
+        grid-auto-rows: 240px; 
+    }
+}
+@media (max-width: 768px) {
+    .hero-buttons { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+    .btn-video-watch { margin-left: 0; }
+    .hero-live-image { display: none; }
+    
+    .bento-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+    .size-horizontal { grid-column: span 2; }
+    .size-big { grid-column: span 2; grid-row: span 2; }
+    .video-container { border-width: 3px; border-radius: 15px; }
+}
+@media (max-width: 480px) {
+    .bento-gallery { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    .size-horizontal, .size-big, .size-vertical { grid-column: span 1; grid-row: span 1; }
+    .gallery-overlay { opacity: 1; background: linear-gradient(to top, rgba(62, 46, 36, 0.9), transparent); padding: 15px; }
+    .gallery-text { transform: translateY(0); }
+}
+
+/* ==========================================================================
+   14. БЛОК ОТЗЫВОВ (TESTIMONIALS)
+   ========================================================================== */
+
+.testimonials {
+    padding: 60px 0;
+    background: var(--bg-creamy);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 25px 25px 20px;
+    border: 1px solid #f0e6db;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Для позиционирования буквы в углу */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-color);
+    box-shadow: 0 12px 35px rgba(253, 168, 0, 0.08);
+}
+
+/* Платформа (Я / VK) — в правом верхнем углу */
+.card-platform {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: #fff;
+    width: fit-content;
+}
+
+.card-platform.yandex {
+    background: #e53935; /* Красный цвет */
+    color: #fff;
+}
+
+.card-platform.vk {
+    background: #0077ff;
+    color: #fff;
+}
+
+/* Имя автора */
+.author-info h4 {
+    font-size: 1.1rem;
+    color: var(--text-title);
+    margin-bottom: 4px;
+    padding-right: 60px; /* Чтобы имя не наезжало на букву в углу */
+}
+
+/* Звёзды */
+.stars {
+    color: var(--brand-color);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* Текст отзыва */
+.review-text {
+    font-size: 0.95rem;
+    color: #5a4c42;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 0; /* Убираем отступ, так как даты больше нет */
+}
+
+/* ==========================================================================
+   15. КНОПКИ ПОД ОТЗЫВАМИ (вспомогательные)
+   ========================================================================== */
+
+.reviews-footer-links {
+    grid-column: 1 / -1;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 50px !important;
+    width: 100% !important;
+    padding: 20px 0 0 0;
+}
+
+.reviews-footer-text {
+    font-size: 1rem;
+    color: #6b5a4e;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.reviews-buttons-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mini-trust-btn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-trust-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.yandex-link {
+    background-color: #fc0;
+    color: #000;
+}
+
+.vk-link {
+    background-color: #0077ff;
+    color: #fff;
+}
+
+/* Адаптивность для отзывов */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .author-info h4 {
+        padding-right: 50px;
+    }
+    
+    .card-platform {
+        top: 12px;
+        right: 12px;
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    .reviews-buttons-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .mini-trust-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        padding: 40px 0;
+    }
+    
+    .testimonial-card .stars {
+        font-size: 0.95rem;
+    }
+    
+    .review-text {
+        font-size: 0.9rem;
+    }
+}
+/* ==========================================================================
+   16. НОВЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ "О НАС"
+   ========================================================================== */
+
+/* ----- 16.1 Блок "Наш подход" ----- */
+.approach-section {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.approach-card {
+    background: var(--bg-creamy);
+    padding: 30px 20px;
+    border-radius: 24px;
+    border: 1px solid #f0e6db;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.approach-card:hover {
+    border-color: var(--brand-color);
+    transform: translateY(-4px);
+}
+
+.approach-card i {
+    font-size: 2.5rem;
+    color: var(--brand-color);
+    margin-bottom: 15px;
+}
+
+.approach-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 12px;
+}
+
+.approach-card p {
+    font-size: 0.95rem;
+    color: #6b5a4e;
+    line-height: 1.6;
+}
+
+/* ----- 16.2 Блок "Руководитель и педагог" (растянутая плашка) ----- */
+.team-section {
+    padding: 60px 0;
+    background: var(--bg-creamy);
+    border-radius: 40px;
+    margin: 20px 0;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-title);
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка для растянутой плашки */
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.member-card.ceo-card {
+    background: #ffffff;
+    border: 1px solid #f0e6db;
+    border-radius: 30px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.member-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%; /* Смещаем фокус вниз (30% от верхнего края) */
+    flex-shrink: 0;
+    border: 5px solid var(--bg-creamy);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.ceo-info {
+    flex: 1;
+    text-align: left;
+}
+
+.ceo-info h4 {
+    font-size: 1.6rem;
+    color: var(--text-title);
+    margin-bottom: 5px;
+}
+
+.ceo-info .role {
+    color: var(--brand-color);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.ceo-details {
+    margin-bottom: 18px;
+}
+
+.ceo-details p {
+    font-size: 0.95rem;
+    color: #5a4c42;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ceo-details p i {
+    color: var(--brand-color);
+    width: 20px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.ceo-quote {
+    background: var(--bg-creamy);
+    border-radius: 16px;
+    padding: 18px 22px;
+    border-left: 4px solid var(--brand-color);
+}
+
+.ceo-quote i {
+    color: var(--brand-color);
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    display: block;
+    opacity: 0.5;
+}
+
+.ceo-quote p {
+    font-size: 1rem;
+    color: #4a3f35;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ----- 16.3 Видео-галерея с превью-картинками ----- */
+.video-gallery-section {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.video-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    border: 1px solid #f0e6db;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+}
+
+.video-card:hover {
+    border-color: var(--brand-color);
+    transform: translateY(-3px);
+}
+
+.video-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Затемнение для читаемости текста */
+.video-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.video-card:hover .video-preview::before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.video-preview i,
+.video-preview .video-title,
+.video-preview .video-duration {
+    position: relative;
+    z-index: 2;
+}
+
+.video-preview i {
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.video-card:hover .video-preview i {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.video-title {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+}
+
+.video-duration {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.9);
+    background: rgba(0,0,0,0.5);
+    padding: 2px 12px;
+    border-radius: 12px;
+}
+
+.video-iframe {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.video-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card.active {
+    border-color: var(--brand-color);
+    box-shadow: 0 10px 30px rgba(253, 168, 0, 0.15);
+}
+
+.video-card.active .video-preview {
+    display: none;
+}
+
+.video-card.active .video-iframe {
+    display: block;
+}
+
+/* ----- 16.4 Соцсети ----- */
+.social-section {
+    padding: 60px 0;
+    background: var(--bg-creamy);
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #fff;
+    border: none;
+}
+
+.social-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.vk-btn {
+    background: #0077ff;
+}
+
+.vk-btn:hover {
+    background: #0066dd;
+}
+
+.rutube-btn {
+    background: #cc3333;
+}
+
+.rutube-btn:hover {
+    background: #aa2222;
+}
+
+
+/* ----- Адаптивность для новых блоков ----- */
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .member-card.ceo-card {
+        padding: 30px;
+        gap: 25px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ceo-info {
+        text-align: center;
+    }
+
+    .ceo-details p {
+        justify-content: center;
+    }
+
+    .ceo-quote {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .approach-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .video-card {
+        aspect-ratio: 16/9;
+    }
+
+    .video-card.active {
+        grid-column: span 1;
+    }
+
+    .member-card.ceo-card {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .member-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .ceo-info h4 {
+        font-size: 1.3rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .official-info-card {
+        padding: 30px 20px;
+    }
+
+    .official-info-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ceo-details p {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+    }
+
+    .ceo-quote p {
+        font-size: 0.9rem;
+    }
+
+    .video-preview i {
+        font-size: 2.8rem;
+    }
+
+    .video-title {
+        font-size: 0.9rem;
+    }
+}
+/* ==========================================================================
+   17. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ SVEDEN.HTML
+   ========================================================================== */
+
+/* Стили для списков в карточках */
+.sveden-card ul {
+    margin: 10px 0 10px 25px;
+    color: #5a4c42;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.sveden-card ul li {
+    margin-bottom: 5px;
+}
+
+/* Образовательная программа */
+.edu-program {
+    background: var(--bg-creamy);
+    padding: 20px 25px;
+    border-radius: 16px;
+    border: 1px solid #f0e6db;
+    margin: 15px 0;
+}
+
+.edu-program h4 {
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 12px;
+}
+
+.edu-program ul {
+    margin: 10px 0 10px 20px;
+}
+
+.edu-program .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brand-color);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.edu-program .btn-download:hover {
+    background: #e09500;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .edu-program {
+        padding: 15px;
+    }
+
+    .edu-program h4 {
+        font-size: 1rem;
+    }
+
+    .sveden-card ul {
+        margin-left: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-program .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* ==========================================================================
+   18. ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ (BVI)
+   ========================================================================== */
+
+/* --- Базовый режим (обычный) --- */
+body.bvi-mode {
+    font-size: 20px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    line-height: 1.8 !important;
+}
+
+body.bvi-mode * {
+    font-size: inherit !important;
+}
+
+body.bvi-mode h1,
+body.bvi-mode h2,
+body.bvi-mode h3,
+body.bvi-mode h4,
+body.bvi-mode h5,
+body.bvi-mode h6 {
+    font-size: 1.5em !important;
+    color: #000000 !important;
+}
+
+body.bvi-mode a {
+    color: #0000ff !important;
+    text-decoration: underline !important;
+}
+
+body.bvi-mode a:hover {
+    color: #ff0000 !important;
+}
+
+body.bvi-mode .btn-primary,
+body.bvi-mode .btn-secondary,
+body.bvi-mode .btn-download,
+body.bvi-mode .btn-eye {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 3px solid #000000 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+body.bvi-mode .btn-primary:hover,
+body.bvi-mode .btn-secondary:hover,
+body.bvi-mode .btn-download:hover,
+body.bvi-mode .btn-eye:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.bvi-mode .hero {
+    background: #ffffff !important;
+    border: 2px solid #000000;
+}
+
+body.bvi-mode .stat-box {
+    background: #ffffff !important;
+    border: 2px solid #000000;
+}
+
+body.bvi-mode .adv-card,
+body.bvi-mode .approach-card,
+body.bvi-mode .member-card,
+body.bvi-mode .testimonial-card,
+body.bvi-mode .sveden-card,
+body.bvi-mode .official-info-card {
+    background: #ffffff !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+}
+
+body.bvi-mode .swiper-slide.program-item {
+    background: #ffffff !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+}
+
+body.bvi-mode .price-tag {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+body.bvi-mode .branch-card {
+    background: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+body.bvi-mode .contact {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-top: 3px solid #000000;
+}
+
+body.bvi-mode .contact i {
+    color: #000000 !important;
+}
+
+body.bvi-mode footer {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-top: 3px solid #000000;
+}
+
+body.bvi-mode .footer-links a {
+    color: #0000ff !important;
+}
+
+body.bvi-mode .footer-links a:hover {
+    color: #ff0000 !important;
+}
+
+body.bvi-mode .gallery-overlay {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.bvi-mode .gallery-text h3,
+body.bvi-mode .gallery-text p {
+    color: #000000 !important;
+}
+
+body.bvi-mode .video-preview {
+    background: #ffffff !important;
+    border: 2px solid #000000;
+}
+
+body.bvi-mode .video-preview i {
+    color: #000000 !important;
+}
+
+body.bvi-mode .video-preview .video-title {
+    color: #000000 !important;
+}
+
+body.bvi-mode .video-preview .video-duration {
+    color: #000000 !important;
+    background: #eeeeee !important;
+}
+
+body.bvi-mode .doc-link-item {
+    background: #ffffff !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+}
+
+body.bvi-mode .doc-link-item i {
+    color: #000000 !important;
+}
+
+body.bvi-mode .doc-link-item:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.bvi-mode .doc-link-item:hover i {
+    color: #ffffff !important;
+}
+
+body.bvi-mode .official-table th {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.bvi-mode .official-table td {
+    border: 1px solid #000000 !important;
+}
+
+body.bvi-mode .official-table tr:nth-child(even) {
+    background: #f0f0f0 !important;
+}
+
+/* --- Адаптив для BVI --- */
+@media (max-width: 768px) {
+    body.bvi-mode {
+        font-size: 18px !important;
+    }
+    
+    body.bvi-mode h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    body.bvi-mode h2 {
+        font-size: 1.5rem !important;
+    }
+}
+/* ============================================================
+   СТИЛИ ДЛЯ ПОДВАЛА (FOOTER)
+   ============================================================ */
+
+.site-footer {
+  background-color: #32221a; /* Темный красивый фон подвала */
+  color: #ffffff;
+  padding: 40px 0 0 0;
+  font-size: 14px; /* Аккуратный аккуратный шрифт для документов */
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 30px;
+  padding-right: 20px;
+}
+
+.footer-column h3 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #ff9f43; /* Оранжевый акцент под стать теме Умного Кота */
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f1f2f6;
+  border-bottom: 2px solid #ff9f43;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+/* Списки в подвале */
+.footer-contacts, 
+.footer-links, 
+.footer-legal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contacts li, 
+.footer-links li, 
+.footer-legal li {
+  margin-bottom: 12px;
+  color: #ced6e0;
+}
+
+/* Иконки */
+.footer-contacts i {
+  margin-right: 10px;
+  color: #ff9f43;
+}
+
+/* Ссылки в подвале */
+.footer-column a {
+  color: #ced6e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Нижняя строка с копирайтом */
+.footer-bottom {
+  background-color: #1e272e;
+  padding: 15px 0;
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #3d4e5d;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #a4b0be;
+  font-size: 13px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-column {
+    width: 100%;
+    margin-bottom: 25px;
+    padding-right: 0;
+  }
+}

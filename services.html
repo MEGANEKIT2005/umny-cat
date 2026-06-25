@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Услуги — Умный Кот</title>
+
+    <!-- Подключаем мягкий шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Подключаем иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Подключаем наш дизайн -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- Шапка сайта (Навигация) -->
+<header>
+    <div class="logo">
+        <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+            <img src="assets/img/logo.png" alt="Умный Кот Логотип" id="main-logo">
+            <span>Умный Кот</span>
+        </a>
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html" class="active">Услуги</a></li>
+        <li class="dropdown">
+            <a href="sveden.html">Сведения об образовательной организации <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="sveden.html#common">Основные сведения</a></li>
+                <li><a href="sveden.html#structure">Структура управления</a></li>
+                <li><a href="sveden.html#documents">Документы</a></li>
+                <li><a href="sveden.html#education">Образование</a></li>
+                <li><a href="sveden.html#management">Руководство</a></li>
+                <li><a href="sveden.html#teachers">Педсостав</a></li>
+                <li><a href="sveden.html#paid-services">Платные услуги</a></li>
+            </ul>
+        </li>
+        <li><a href="index.html#branches">Контакты</a></li>
+    </ul>
+    
+    <button id="bvi-open" class="btn-eye"><i class="fas fa-eye"></i> Версия для слабовидящих</button>
+</header>
+
+<main>
+    <section class="services-hero">
+        <div class="container">
+            <h1>Наши <span>Услуги</span></h1>
+            <p class="subtitle">Подробное описание направлений нашего детского центра. Выберите то, что подходит именно вам!</p>
+        </div>
+    </section>
+
+    <section class="services-content">
+        <div class="container">
+            <div class="services-grid">
+                
+                <!-- ===== Карточка 1: Подростки ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_teenagers.png" alt="Группа для подростков">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Группа для подростков</h3>
+                        <p>Помогите вашему ребенку хорошо сдать школьные экзамены, иметь возможность поступить в престижный вуз и дать шанс на быстрый карьерный рост!</p>
+                        <p class="sc-note">*Цена указана за групповое занятие 60 минут*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">500 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 60 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 2: Дети 7-9 лет ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_children.png" alt="Группа для детей">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Группа для детей (7-9 лет)</h3>
+                        <p>Мы обучаем детей писать и читать на английском языке (этого не делают в школе). Обучение происходит в игровой форме.</p>
+                        <p class="sc-note">*Цена указана за групповое занятие 45 минут*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">450 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 45 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 3: Взрослые ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_adult.png" alt="Группа для взрослых">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Группа для взрослых</h3>
+                        <p>Хотите путешествовать, получить повышение по работе, переехать в другую страну? Начните изучать международный язык уже сегодня, повысьте свой доход и получите возможность свободно передвигаться по миру. Занятия проходят онлайн индивидуально.</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">1 100 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 60 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 4: Подготовка к школе (НОВАЯ) ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_school.png" alt="Подготовка к школе">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Подготовка к школе</h3>
+                        <p>Комплексная подготовка к школе: обучение чтению, письму, счёту, развитие познавательных процессов и навыков, необходимых для успешного старта в 1-м классе. Занятия проходят в игровой форме.</p>
+                        <p class="sc-note">*Цена указана за групповое занятие 45 минут*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">450 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 45 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 5: Развитие памяти и внимания (НОВАЯ) ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_memory.png" alt="Развитие памяти и внимания">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Развитие памяти и внимания (5-10 лет)</h3>
+                        <p>Развитие когнитивных способностей, памяти, внимания и логического мышления через игровые упражнения и интерактивные задания. Помогает детям лучше усваивать школьный материал.</p>
+                        <p class="sc-note">*Цена указана за групповое занятие 45 минут*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">450 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 45 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 6: ОГЭ ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_oge.png" alt="Подготовка к ОГЭ">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Подготовка к ОГЭ</h3>
+                        <p>По статистике 90% наших учащихся сдают ОГЭ на 5 при системном обучении и постоянной подготовке. Индивидуальный подход к каждому ученику.</p>
+                        <p class="sc-note">*Цена указана за индивидуальное занятие*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">4 000 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 60 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 7: ЕГЭ ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_ege.png" alt="Подготовка к ЕГЭ">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Подготовка к ЕГЭ</h3>
+                        <p>В начале обучения мы проводим вводное тестирование и прогнозируем примерное количество баллов, которое вы сможете набрать на экзамене! Наш лучший результат — 96 баллов на экзамене в 2022 году!</p>
+                        <p class="sc-note">*Цена указана за индивидуальное занятие*</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">4 000 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 60 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 8: Рисование ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_draw.png" alt="Рисование">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Рисование</h3>
+                        <p>Рисование каждую субботу, мы предоставляем все необходимое для занятия. Занятия проходят в мини-группах, дети получают творческую разрядку и понимание света, тени и других понятий!</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">400 ₽</span>
+                            <span class="sc-duration"><i class="far fa-clock"></i> 60 мин</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Карточка 9: Мастер-классы ===== -->
+                <div class="service-card-detailed">
+                    <div class="sc-img-wrapper">
+                        <img src="assets/img/cat_master.png" alt="Мастер-классы">
+                    </div>
+                    <div class="sc-info">
+                        <h3>Мастер-классы</h3>
+                        <p>Предпраздничные мастер-классы, работа в мини-группе с использованием различных техник и материалов для развития творческого потенциала.</p>
+                        <div class="sc-meta">
+                            <span class="sc-price">600 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Подвал сайта -->
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <div class="footer-column">
+            <div class="footer-logo">
+                <h3>Умный Кот</h3>
+            </div>
+            <ul class="footer-contacts">
+                <li><i class="fas fa-map-marker-alt"></i> ул. Хромова, д. 27</li>
+                <li><i class="fas fa-phone-alt"></i> <a href="tel:+79157110808">+7 (915) 711-08-08</a></li>
+            </ul>
+        </div>
+
+        <!-- Колонка 2: Документы и сведения -->
+        <div class="footer-column">
+            <h4>Документы</h4>
+            <ul class="footer-links">
+                <li><a href="sveden.html">Сведения об образовательной организации</a></li>
+                <li><a href="sveden.html#license-status">Лицензия</a></li>
+                <li><a href="docs/Ustav.pdf" target="_blank">Устав</a></li>
+                <li><a href="docs/Oferta.pdf" target="_blank">Публичная оферта</a></li>
+                <li><a href="docs/Privacy_Policy.pdf" target="_blank">Политика конфиденциальности</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Реквизиты</h4>
+            <ul class="footer-legal">
+                <li><strong>ОГРНИП:</strong> 321695200062168</li>
+                <li><strong>ИНН:</strong> 695007512321</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>&copy; 2026 Детский центр «Умный Кот». Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ ===== -->
+<script src="assets/js/bvi.js"></script>
+</body>
+</html>

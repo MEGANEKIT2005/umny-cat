@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Умный Кот — Детский центр</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    
+    <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+            <img src="assets/img/logo.png" alt="Умный Кот Логотип" id="main-logo">
+            <span>Умный Кот</span>
+        </a>
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li class="dropdown">
+            <a href="sveden.html">Сведения об образовательной организации <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="sveden.html#common">Основные сведения</a></li>
+                <li><a href="sveden.html#structure">Структура управления</a></li>
+                <li><a href="sveden.html#documents">Документы</a></li>
+                <li><a href="sveden.html#education">Образование</a></li>
+                <li><a href="sveden.html#management">Руководство</a></li>
+                <li><a href="sveden.html#teachers">Педсостав</a></li>
+                <li><a href="sveden.html#paid-services">Платные услуги</a></li>
+            </ul>
+        </li>
+        <li><a href="index.html#branches">Контакты</a></li>
+    </ul>
+    
+    <button id="bvi-open" class="btn-eye"><i class="fas fa-eye"></i> Версия для слабовидящих</button>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Учимся и растем с <span>Умным Котом</span></h1>
+            <p>Развивающие занятия, подготовка к школе и творчество в уютной атмосфере для детей всех возрастов.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Записаться на занятие</a>
+                <a href="#video-block" class="btn-video-watch"><i class="fas fa-play-circle"></i> Смотреть видео</a>
+            </div>
+        </div>
+        <div class="hero-live-image">
+            <img src="assets/img/hero-2.jpg" alt="Занятия в Умном Коте" class="hero-img-left">
+            <img src="assets/img/hero.jpg" alt="Атмосфера в детском центре Умный Кот" class="hero-img-right">
+        </div>
+    </section>
+
+    <section class="about-summary" style="padding-top: 60px;">
+        <div class="container">
+            <h2>Добро пожаловать в «Умный Кот»!</h2>
+            <p>Мы — современный детский центр, где бережно развиваем интеллект, логику и творческий потенциал каждого ребенка. Наши уникальные методики и опытные педагоги создают комфортную среду для легкого обучения без стресса и зубрежки. Мы готовим к школе, развиваем память, внимание и помогаем раскрыть скрытые таланты.</p>
+            <a href="about.html" class="btn-secondary">Подробнее о нас</a>
+        </div>
+    </section>
+
+    <section class="live-gallery-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 5px;">Атмосфера нашего центра</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 35px;">Живые эмоции, увлекательные эксперименты и гордость за первые победы!</p>
+            
+            <div class="bento-gallery">
+                <div class="gallery-item size-big">
+                    <img src="assets/img/gallery-5.jpg" alt="Наши выпускники">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Первые успехи</h3>
+                            <p>Гордимся каждым учеником и с радостью вручаем заслуженные сертификаты!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-1.jpg" alt="Игра в монополию">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Игротека</h3>
+                            <p>Развиваем стратегическое мышление за партией в Монополию.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-2.jpg" alt="Кулинарный мастер-класс">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Поварята</h3>
+                            <p>Учимся готовить настоящие домашние пельмени своими руками.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-horizontal">
+                    <img src="assets/img/gallery-4.jpg" alt="Химический эксперимент вулкан">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Веселая наука</h3>
+                            <p>Проводим безопасные и зрелищные опыты. Настоящий вулкан эмоций!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-horizontal">
+                    <img src="assets/img/gallery-8.jpg" alt="Подростки с сертификатами">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Старшие группы</h3>
+                            <p>Помогаем подросткам достигать целей и верить в свои силы.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-6.jpg" alt="Мастер-класс по свечам">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Дружная компания</h3>
+                            <p>Увлекательный процесс создания крафтовых свечей за общим столом.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-7.jpg" alt="Делаем свечи">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Магия уюта</h3>
+                            <p>Каждый уносит домой свечу, сделанную с теплом и любовью.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-3.jpg" alt="Творческая аппликация">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Творчество</h3>
+                            <p>Создаем потрясающие объемные аппликации.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item size-vertical">
+                    <img src="assets/img/gallery-9.jpg" alt="Объемный 3D рисунок">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>3D-рисунок</h3>
+                            <p>Создаем удивительные объемные картинки из бумаги.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-video-section" id="video-block">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Погрузитесь в нашу атмосферу</h2>
+            <div class="video-container">
+                <video controls preload="metadata" poster="assets/img/hero.jpg">
+                    <source src="assets/video/promo.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает встроенные видео.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs-slider-section" id="programs-slider">
+        <div class="container">
+            <h2 class="section-title">Наши направления</h2>
+            <p class="section-subtitle">Выберите занятие, которое подойдет вашему ребенку</p>
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_teenagers.png" alt="Группа для подростков" class="service-img">
+                        <h4>Подростки</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_children.png" alt="Группа для детей 7-9 лет" class="service-img">
+                        <h4>Группа 7-9 лет</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_adult.png" alt="Группа для взрослых" class="service-img">
+                        <h4>Для взрослых</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_oge.png" alt="Подготовка к ОГЭ" class="service-img">
+                        <h4>Подготовка ОГЭ</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_ege.png" alt="Подготовка к ЕГЭ" class="service-img">
+                        <h4>Подготовка ЕГЭ</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_draw.png" alt="Рисование 5-14 лет" class="service-img">
+                        <h4>Рисование</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                    <div class="swiper-slide program-item">
+                        <img src="assets/img/cat_master.png" alt="Мастер-класс" class="service-img">
+                        <h4>Мастер-класс</h4>
+                        <a href="services.html" class="price-tag">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="services.html" class="btn-primary" style="display: inline-block;">Посмотреть все услуги подробнее</a>
+            </div>
+        </div>
+    </section>
+    <!-- Блок "Отзывы родителей" -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Что говорят родители</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Честные оценки нашей работы на независимых площадках</p>
+            
+            <div class="testimonials-grid">
+                <!-- Отзыв 1 (Тамара Каменщикова) -->
+                <div class="testimonial-card">
+                    <div class="card-platform yandex">Я</div>
+                    <div class="author-info">
+                        <h4>Тамара Каменщикова</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Моя дочь ходит в 1 класс, по опыту других родителей решили отдать её заранее на английский... ребенок теперь умеет читать, хорошо пишет диктанты, может рассказать про себя и даже какую то грамматику понимает! Результаты превзошли ожидания! Персонал очень профессиональный и добрый :)"</p>
+                    <div class="review-date">20 мая 2025</div>
+                </div>
+
+                <!-- Отзыв 2 (Елена Бородина) -->
+                <div class="testimonial-card">
+                    <div class="card-platform yandex">Я</div>
+                    <div class="author-info">
+                        <h4>Елена Бородина</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Учимся в школе английского языка Умный кот этот учебный год у Алены Аркадьевны, ребенок 14 лет. Дочери очень нравится, уроки интересные и не скучные не как в школе... Оценки в школе изменились с 3 и 4 перешли на 5. Однозначно будем продолжать здесь учиться! Рекомендую!"</p>
+                    <div class="review-date">13 мая 2025</div>
+                </div>
+
+                <!-- Отзыв 3 (Анастасия Чекмарёва) -->
+                <div class="testimonial-card">
+                    <div class="card-platform yandex">Я</div>
+                    <div class="author-info">
+                        <h4>Анастасия Чекмарёва</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Были на открытом уроке, очень понравился. Дети вовлечены благодаря подвижным и увлекательным играм. Учитель внимателен к ученикам и сохраняет дружественную атмосферу в классе. Сами курсы замечательные. Ребёнок хорошо усваивает материал и легче запоминает слова в игровом формате."</p>
+                    <div class="review-date">18 мая</div>
+                </div>
+
+                <!-- Отзыв 4 (Анастасия Грачёва) -->
+                <div class="testimonial-card">
+                    <div class="card-platform yandex">Я</div>
+                    <div class="author-info">
+                        <h4>Анастасия Грачёва</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Нравится школа за подход к ученикам. Ребенок стал хорошо переводить предложения и понимает их построение. Д/з выполняет самостоятельно. Также ребёнку очень понравился летний лагерь, различные развлечения, походы в музей, мастер-классы..."</p>
+                    <div class="review-date">15 декабря 2024</div>
+                </div>
+
+                <!-- Отзыв 5 (Rita Vasilchenko) - НОВЫЙ -->
+                <div class="testimonial-card">
+                    <div class="card-platform yandex">Я</div>
+                    <div class="author-info">
+                        <h4>Rita Vasilchenko</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Занимались в студии у педагога Алены Аркадьевны. Дочка (11 лет) за 6 месяцев повысила уровень английского как в грамматике так и в разговорной речи, появилось правильное произношение. Хорошая подача материала, игровые формы обучения."</p>
+                    <div class="review-date">27 февраля 2024</div>
+                </div>
+
+                <!-- Отзыв 6 (Екатерина Тимина) -->
+                <div class="testimonial-card">
+                    <div class="card-platform vk">VK</div>
+                    <div class="author-info">
+                        <h4>Екатерина Тимина</h4>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Хотелось бы сказать спасибо Алене Аркадьевне, за ее стиль преподавания. Детям очень нравиться. Все понятно. Отчет об уроках приходит на телефон, домашние задания также дублируются на телефон родителям, есть ссылки для занятий в приложении - это очень удобно... Открытый урок в конце года понравился. Сама идея проводить такие уроки 👍"</p>
+                    <div class="review-date">1 мая 2023 в 16:27</div>
+                </div>
+            </div>
+
+            <!-- Объединенный блок ссылок -->
+            <div class="reviews-footer-links">
+                <span class="reviews-footer-text">Смотреть все отзывы на:</span>
+                <div class="reviews-buttons-group">
+                    <a href="https://yandex.ru/maps/-/CTQGaO9B" target="_blank" class="mini-trust-btn yandex-link">
+                        <i class="fab fa-yandex"></i> Яндекс.Картах
+                    </a>
+                    <a href="https://vk.com/smart.cat.tver?ysclid=mqsq1p4fh2990480696" target="_blank" class="mini-trust-btn vk-link">
+                        <i class="fab fa-vk"></i> ВКонтакте
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="branches" id="branches">
+        <div class="container">
+            <h2>Наши филиалы</h2>
+            <div class="branches-wrapper">
+                <div class="branches-list">
+                    <div class="branch-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Заволжский район</h3>
+                        <p>г. Тверь, ул. Хромова, д. 27</p>
+                        <p class="branch-phone"><i class="fas fa-phone"></i> +7 (915) 711-08-08</p>
+                    </div>
+                    <div class="branch-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Юность</h3>
+                        <p>г. Тверь, ул. Планерная, д. 4</p>
+                        <p class="branch-phone"><i class="fas fa-phone"></i> +7 (904) 009-43-48</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac76d72941b7b55a5f1b1f87d6b5641d986c8147a7e5e7f54d20f2b7b6fcfdd08&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Ждем вас в гости!</h2>
+                <p><i class="fas fa-map-pin"></i> Администрация: г. Тверь, ул. Хромова, д. 27</p>
+                <p><i class="fas fa-phone-alt"></i> +7 (915) 711-08-08</p>
+                <p><i class="fas fa-clock"></i> Пн–Пт: 09:00 – 19:00</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <div class="footer-column">
+      <div class="footer-logo">
+        <h3>Умный Кот</h3>
+      </div>
+      <ul class="footer-contacts">
+        <li><i class="fas fa-map-marker-alt"></i> ул. Хромова, д. 27</li>
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+79157110808">+7 (915) 711-08-08</a></li>
+      </ul>
+    </div>
+
+    <!-- Колонка 2: Документы и сведения -->
+    <div class="footer-column">
+      <h4>Документы</h4>
+      <ul class="footer-links">
+        <li><a href="sveden.html">Сведения об образовательной организации</a></li>
+        <li><a href="sveden.html#license-status">Лицензия</a></li>
+        <li><a href="docs/Ustav.pdf" target="_blank">Устав</a></li>
+        <li><a href="docs/Oferta.pdf" target="_blank">Публичная оферта</a></li>
+        <li><a href="docs/Privacy_Policy.pdf" target="_blank">Политика конфиденциальности</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Реквизиты</h4>
+      <ul class="footer-legal">
+        <li><strong>ОГРНИП:</strong> 321695200062168</li>
+        <li><strong>ИНН:</strong> 695007512321</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <p>&copy; 2026 Детский центр «Умный Кот». Все права защищены.</p>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 4,
+    spaceBetween: 25,
+    loop: true,
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: { 
+        320: { slidesPerView: 1, spaceBetween: 10 }, 
+        720: { slidesPerView: 2, spaceBetween: 15 }, 
+        1024: { slidesPerView: 3, spaceBetween: 20 },
+        1200: { slidesPerView: 4, spaceBetween: 25 } 
+    }
+  });
+</script>
+<!-- ===== ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ ===== -->
+<script src="assets/js/bvi.js"></script>
+</body>
+</html>

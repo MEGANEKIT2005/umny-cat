@@ -20,10 +20,12 @@
             <span>Умный Кот</span>
         </a>
     </div>
-    <ul class="nav-links">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="about.html" class="active">О нас</a></li>
+    
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
+        <li><a href="news.html">Новости</a></li>
         <li class="dropdown">
             <a href="sveden.html">Сведения об образовательной организации <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
             <ul class="dropdown-menu">
@@ -38,6 +40,14 @@
         </li>
         <li><a href="index.html#branches">Контакты</a></li>
     </ul>
+    
+    <!-- Бургер-меню (ДОБАВИТЬ) -->
+    <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
     <button id="bvi-open" class="btn-eye"><i class="fas fa-eye"></i> Версия для слабовидящих</button>
 </header>
 
@@ -296,5 +306,9 @@
 </script>
 <!-- ===== ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ ===== -->
 <script src="assets/js/bvi.js"></script>
+
+<!-- ===== МОБИЛЬНОЕ МЕНЮ (БУРГЕР) ===== -->
+<script src="assets/js/menu.js"></script>
+
 </body>
 </html>

@@ -14,6 +14,7 @@
     <!-- Подключаем наш дизайн -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" href="assets/img/logo.png" />
+    <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
 
@@ -26,10 +27,11 @@
         </a>
     </div>
     
-    <ul class="nav-links">
-        <li><a href="index.html">Главная</a></li>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Главная</a></li>
         <li><a href="about.html">О нас</a></li>
-        <li><a href="services.html" class="active">Услуги</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="news.html">Новости</a></li>
         <li class="dropdown">
             <a href="sveden.html">Сведения об образовательной организации <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
             <ul class="dropdown-menu">
@@ -44,6 +46,13 @@
         </li>
         <li><a href="index.html#branches">Контакты</a></li>
     </ul>
+    
+    <!-- Бургер-меню (ДОБАВИТЬ) -->
+    <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     
     <button id="bvi-open" class="btn-eye"><i class="fas fa-eye"></i> Версия для слабовидящих</button>
 </header>
@@ -203,6 +212,34 @@
             </div>
         </div>
     </section>
+
+    <!-- НОВЫЙ БЛОК: Форма записи на занятие -->
+    <section class="appointment-section" id="appointment-form">
+        <div class="container">
+            <div class="appointment-wrapper">
+                <div class="appointment-header">
+                    <h2>Оставьте заявку для записи на занятие</h2>
+                    <p>Заполните форму ниже, и мы свяжемся с вами в ближайшее время!</p>
+                </div>
+                <form id="request-form" class="appointment-form">
+                    <div class="form-group">
+                        <label for="user_name"><i class="fas fa-user"></i> Ваше имя</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="Имя" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_phone"><i class="fas fa-phone"></i> Номер телефона</label>
+                        <input type="tel" id="user_phone" name="user_phone" placeholder="+7 (900) 000-00-00" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email"><i class="fas fa-envelope"></i> E-mail</label>
+                        <input type="email" id="user_email" name="user_email" placeholder="example@mail.ru" required />
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить заявку</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
 </main>
 
 <!-- Подвал сайта -->
@@ -250,5 +287,47 @@
 
 <!-- ===== ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ ===== -->
 <script src="assets/js/bvi.js"></script>
+<!-- ===== МОБИЛЬНОЕ МЕНЮ (БУРГЕР) ===== -->
+<script src="assets/js/menu.js"></script>
+
+
+<!-- ===== ИНТЕГРАЦИЯ EMAILJS ДЛЯ ОТПРАВКИ ЗАЯВОК ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function() {
+    // Инициализация API Ключа EmailJS
+    emailjs.init("WQfzDyGeWQNP8xs9s");
+  })();
+
+  document.getElementById('request-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = this.querySelector('.btn-submit');
+    
+    // Блокируем кнопку на время отправки
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Отправка...';
+    statusDiv.style.display = 'none';
+    statusDiv.className = 'form-status';
+
+    // Отправка формы через EmailJS шаблон
+    emailjs.sendForm('default_service', 'template_oxtf04r', this)
+      .then(function() {
+        statusDiv.classList.add('success');
+        statusDiv.innerText = 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.';
+        statusDiv.style.display = 'block';
+        submitBtn.innerText = 'Отправлено успешно';
+        document.getElementById('request-form').reset();
+      }, function(error) {
+        statusDiv.classList.add('error');
+        statusDiv.innerText = 'Произошла ошибка при отправке. Пожалуйста, попробуйте позже.';
+        statusDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Отправить заявку';
+        console.error('EmailJS Error:', error);
+      });
+  });
+</script>
 </body>
 </html>

@@ -1997,6 +1997,7 @@ body.bvi-mode .btn-news-vk:hover {
     background: #000000 !important;
     color: #ffffff !important;
 }
+
 /* ==========================================================================
    21. БУРГЕР-МЕНЮ ДЛЯ МОБИЛЬНЫХ
    ========================================================================== */
@@ -2111,22 +2112,128 @@ body.bvi-mode .btn-news-vk:hover {
 
 /* ----- 21.3 Адаптивность: показываем бургер на телефонах ----- */
 @media (max-width: 768px) {
+    /* Переопределяем шапку для телефонов — компактная версия */
+    header {
+        padding: 10px 15px !important;
+        min-height: 56px !important;
+    }
+    
+    .logo {
+        font-size: 1.1rem !important;
+        gap: 6px !important;
+    }
+    
+    #main-logo {
+        height: 32px !important;
+        width: auto !important;
+    }
+    
+    .btn-eye {
+        font-size: 0.7rem !important;
+        padding: 5px 10px !important;
+        border-radius: 15px !important;
+        margin-left: 5px !important;
+        white-space: nowrap !important;
+        background: #f2ebe1 !important;
+        border: none !important;
+    }
+    
+    .btn-eye i {
+        font-size: 0.8rem !important;
+        margin-right: 3px !important;
+    }
+    
     .burger-menu {
-        display: flex;
+        display: flex !important;
+        width: 26px !important;
+        height: 18px !important;
+        margin-left: 6px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .burger-menu span {
+        height: 2.5px !important;
+        background: var(--text-dark) !important;
+        border-radius: 2px !important;
     }
     
     /* Скрываем десктопное меню */
     .nav-links {
         display: none !important;
     }
-    
-    /* Кнопка слабовидящих на мобильных делаем компактнее */
-    .btn-eye {
-        font-size: 0.85rem;
-        padding: 6px 12px;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 6px 10px !important;
+        min-height: 48px !important;
     }
+    
+    .logo {
+        font-size: 0.9rem !important;
+        gap: 4px !important;
+    }
+    
+    #main-logo {
+        height: 26px !important;
+    }
+    
+    .btn-eye {
+        font-size: 0.6rem !important;
+        padding: 4px 8px !important;
+        border-radius: 12px !important;
+        margin-left: 3px !important;
+    }
+    
     .btn-eye i {
-        margin-right: 4px;
+        font-size: 0.7rem !important;
+        margin-right: 2px !important;
+    }
+    
+    .burger-menu {
+        width: 22px !important;
+        height: 16px !important;
+        margin-left: 4px !important;
+    }
+    
+    .burger-menu span {
+        height: 2px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        padding: 4px 6px !important;
+        min-height: 42px !important;
+    }
+    
+    .logo {
+        font-size: 0.75rem !important;
+        gap: 3px !important;
+    }
+    
+    #main-logo {
+        height: 22px !important;
+    }
+    
+    .btn-eye {
+        font-size: 0.5rem !important;
+        padding: 3px 6px !important;
+        border-radius: 10px !important;
+    }
+    
+    .btn-eye i {
+        font-size: 0.6rem !important;
+    }
+    
+    .burger-menu {
+        width: 18px !important;
+        height: 14px !important;
+        margin-left: 3px !important;
+    }
+    
+    .burger-menu span {
+        height: 1.8px !important;
     }
 }
 
